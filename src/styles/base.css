@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  :root {
+    font-size: 62.5%;
+    -webkit-text-size-adjust: none;
+  }
+
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  button,
+  input,
+  select,
+  textarea,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    background: none;
+    box-sizing: border-box;
+  }
+
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+
+  ol,
+  ul,
+  li {
+    list-style: none;
+  }
+
+  blockquote,
+  q {
+    quotes: none;
+    &:before,
+    &:after {
+      content: '';
+      content: none;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+	/* grid 등등 갖다 쓸 것들 정의 */
+@layer components{
+	/* EX */
+  .btn {
+    @apply relative mt-[0px] flex h-[40px] w-max cursor-pointer items-center justify-center gap-[8px] overflow-hidden rounded-full py-[10px] px-[24px] text-label-large disabled:cursor-not-allowed disabled:opacity-30;
+  }
+
+  .filled {
+    @apply bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-400 dark:text-indigo-900 dark:hover:bg-indigo-500;
+  }
+
+  .tonal {
+    @apply bg-indigo-100 text-indigo-500 hover:bg-indigo-200 dark:bg-indigo-500/20 dark:text-indigo-400 dark:backdrop-blur-md dark:hover:bg-indigo-500/30;
+  }
+}
+
+/* 애니메이션이나 트랜지션 같은거 정의 */
+@layer utilities {
+/* EX */
+  @keyframes bottomTopFadeIn {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  section.visible {
+    .section-animations {
+      animation: bottomTopFadeIn 0.4s cubic-bezier(0.2, 0, 0, 1) 1;
+    }
+
+    .section-animations-slow {
+      animation: bottomTopFadeIn 0.6s cubic-bezier(0.2, 0, 0, 1) 1;
+    }
+  }
+}
