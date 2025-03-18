@@ -19,7 +19,7 @@ const ButtonListTemplate = ({title, linkItems}: ButtonListTempltateProps) => {
     <button onClick={() => navigate(-1)} className="text-3xl font-semibold">&lt;</button>
     <h1 className="flex-1 text-center text-6xl font-bold">{title}</h1>
   </header>
-  <ul className="flex flex-col gap-2 items-center">
+  <ul className="flex flex-col gap-2 items-center mb-4">
     {linkItems.map((link, linkIndex) => (
     <li key={`link-item__${linkIndex}`}>
       <Link className="p-2 text-2xl font-semibold" to={link.path}>{link.label}</Link>

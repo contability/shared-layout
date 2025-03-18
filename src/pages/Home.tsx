@@ -4,7 +4,12 @@ const homePageLinkItems:ButtonListTempltateProps['linkItems'] = [
   {
     path: "/text",
     label: "text layout"
-  }
+  },
+  {
+    path: "/image",
+    label: "image layout"
+  },
+
 ];
 
 const HomePage = () => {

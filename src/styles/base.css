@@ -101,6 +101,7 @@
     vertical-align: baseline;
     background: none;
     box-sizing: border-box;
+    color: #ffffff;
   }
 
   article,
@@ -118,7 +119,7 @@
   }
 
   body{
-    background-color: #F4F7F9
+    background-color: #242424;
   }
 
   ol,

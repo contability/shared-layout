@@ -2,9 +2,9 @@ import { lazy, Suspense } from "react";
 
 const Version01Skeleton = () => {
   return <div className="space-y-2">
-  <div className="h-3 bg-gray-200 rounded-full animate-pulse w-[80%]" />
-  <div className="h-3 bg-gray-200 rounded-full animate-pulse w-[60%]" />
-  <div className="h-3 bg-gray-200 rounded-full animate-pulse w-[70%]" />
+  <div className="h-3 bg-[#f0f0f0] rounded-full animate-pulse w-[80%]" />
+  <div className="h-3 bg-[#f0f0f0] rounded-full animate-pulse w-[60%]" />
+  <div className="h-3 bg-[#f0f0f0] rounded-full animate-pulse w-[70%]" />
 </div>
 };
 
