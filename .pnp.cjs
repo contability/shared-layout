@@ -28,6 +28,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@eslint/js", "npm:9.22.0"],\
+          ["@types/node", "npm:22.13.10"],\
           ["@types/react", "npm:19.0.11"],\
           ["@types/react-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:19.0.4"],\
           ["@vitejs/plugin-react-swc", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:3.8.0"],\
@@ -41,6 +42,7 @@ const RAW_RUNTIME_STATE =
           ["prettier-plugin-tailwindcss", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:0.6.11"],\
           ["react", "npm:19.0.0"],\
           ["react-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:19.0.0"],\
+          ["react-router-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:7.3.0"],\
           ["tailwind-scrollbar-hide", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:2.0.0"],\
           ["tailwindcss", "npm:3.4.17"],\
           ["typescript", "patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5"],\
@@ -901,6 +903,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/cookie", [\
+      ["npm:0.6.0", {\
+        "packageLocation": "./.yarn/cache/@types-cookie-npm-0.6.0-1f4c3f48f0-5b326bd018.zip/node_modules/@types/cookie/",\
+        "packageDependencies": [\
+          ["@types/cookie", "npm:0.6.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/estree", [\
       ["npm:1.0.6", {\
         "packageLocation": "./.yarn/cache/@types-estree-npm-1.0.6-b5e23f2ea2-cdfd751f6f.zip/node_modules/@types/estree/",\
@@ -915,6 +926,16 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@types-json-schema-npm-7.0.15-fd16381786-a996a745e6.zip/node_modules/@types/json-schema/",\
         "packageDependencies": [\
           ["@types/json-schema", "npm:7.0.15"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/node", [\
+      ["npm:22.13.10", {\
+        "packageLocation": "./.yarn/cache/@types-node-npm-22.13.10-af5336e62b-a3865f9503.zip/node_modules/@types/node/",\
+        "packageDependencies": [\
+          ["@types/node", "npm:22.13.10"],\
+          ["undici-types", "npm:6.20.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1502,6 +1523,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/concat-map-npm-0.0.1-85a921b7ee-c996b1cfdf.zip/node_modules/concat-map/",\
         "packageDependencies": [\
           ["concat-map", "npm:0.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["cookie", [\
+      ["npm:1.0.2", {\
+        "packageLocation": "./.yarn/cache/cookie-npm-1.0.2-7a4273d897-fd25fe79e8.zip/node_modules/cookie/",\
+        "packageDependencies": [\
+          ["cookie", "npm:1.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3123,6 +3153,63 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["react-router", [\
+      ["npm:7.3.0", {\
+        "packageLocation": "./.yarn/cache/react-router-npm-7.3.0-4de1f219c0-2965a8a759.zip/node_modules/react-router/",\
+        "packageDependencies": [\
+          ["react-router", "npm:7.3.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:86faf501b185cbf6d121a150a9fcd8aaa5ac181765d8ff55026a0adcc1ce3332697782aa98f95e764d673a8b4a8f3d854f46a7cda42ec48d2215ac85d6343581#npm:7.3.0", {\
+        "packageLocation": "./.yarn/__virtual__/react-router-virtual-4e25334980/0/cache/react-router-npm-7.3.0-4de1f219c0-2965a8a759.zip/node_modules/react-router/",\
+        "packageDependencies": [\
+          ["react-router", "virtual:86faf501b185cbf6d121a150a9fcd8aaa5ac181765d8ff55026a0adcc1ce3332697782aa98f95e764d673a8b4a8f3d854f46a7cda42ec48d2215ac85d6343581#npm:7.3.0"],\
+          ["@types/cookie", "npm:0.6.0"],\
+          ["@types/react", "npm:19.0.11"],\
+          ["@types/react-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:19.0.4"],\
+          ["cookie", "npm:1.0.2"],\
+          ["react", "npm:19.0.0"],\
+          ["react-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:19.0.0"],\
+          ["set-cookie-parser", "npm:2.7.1"],\
+          ["turbo-stream", "npm:2.4.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["react-router-dom", [\
+      ["npm:7.3.0", {\
+        "packageLocation": "./.yarn/cache/react-router-dom-npm-7.3.0-5aa88d5ce1-62360eb87d.zip/node_modules/react-router-dom/",\
+        "packageDependencies": [\
+          ["react-router-dom", "npm:7.3.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:7.3.0", {\
+        "packageLocation": "./.yarn/__virtual__/react-router-dom-virtual-86faf501b1/0/cache/react-router-dom-npm-7.3.0-5aa88d5ce1-62360eb87d.zip/node_modules/react-router-dom/",\
+        "packageDependencies": [\
+          ["react-router-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:7.3.0"],\
+          ["@types/react", "npm:19.0.11"],\
+          ["@types/react-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:19.0.4"],\
+          ["react", "npm:19.0.0"],\
+          ["react-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:19.0.0"],\
+          ["react-router", "virtual:86faf501b185cbf6d121a150a9fcd8aaa5ac181765d8ff55026a0adcc1ce3332697782aa98f95e764d673a8b4a8f3d854f46a7cda42ec48d2215ac85d6343581#npm:7.3.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["read-cache", [\
       ["npm:1.0.0", {\
         "packageLocation": "./.yarn/cache/read-cache-npm-1.0.0-00fa89ed05-90cb275021.zip/node_modules/read-cache/",\
@@ -3259,12 +3346,22 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["set-cookie-parser", [\
+      ["npm:2.7.1", {\
+        "packageLocation": "./.yarn/cache/set-cookie-parser-npm-2.7.1-0e92d9e679-060c198c4c.zip/node_modules/set-cookie-parser/",\
+        "packageDependencies": [\
+          ["set-cookie-parser", "npm:2.7.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["shared-layout", [\
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
           ["shared-layout", "workspace:."],\
           ["@eslint/js", "npm:9.22.0"],\
+          ["@types/node", "npm:22.13.10"],\
           ["@types/react", "npm:19.0.11"],\
           ["@types/react-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:19.0.4"],\
           ["@vitejs/plugin-react-swc", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:3.8.0"],\
@@ -3278,6 +3375,7 @@ const RAW_RUNTIME_STATE =
           ["prettier-plugin-tailwindcss", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:0.6.11"],\
           ["react", "npm:19.0.0"],\
           ["react-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:19.0.0"],\
+          ["react-router-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:7.3.0"],\
           ["tailwind-scrollbar-hide", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:2.0.0"],\
           ["tailwindcss", "npm:3.4.17"],\
           ["typescript", "patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5"],\
@@ -3588,6 +3686,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["turbo-stream", [\
+      ["npm:2.4.0", {\
+        "packageLocation": "./.yarn/cache/turbo-stream-npm-2.4.0-e0cec53097-e68b2569f1.zip/node_modules/turbo-stream/",\
+        "packageDependencies": [\
+          ["turbo-stream", "npm:2.4.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["type-check", [\
       ["npm:0.4.0", {\
         "packageLocation": "./.yarn/cache/type-check-npm-0.4.0-60565800ce-7b3fd0ed43.zip/node_modules/type-check/",\
@@ -3632,6 +3739,15 @@ const RAW_RUNTIME_STATE =
           "@types/typescript",\
           "eslint",\
           "typescript"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["undici-types", [\
+      ["npm:6.20.0", {\
+        "packageLocation": "./.yarn/cache/undici-types-npm-6.20.0-bd21e669af-68e659a988.zip/node_modules/undici-types/",\
+        "packageDependencies": [\
+          ["undici-types", "npm:6.20.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3714,7 +3830,7 @@ const RAW_RUNTIME_STATE =
           ["@types/jiti", null],\
           ["@types/less", null],\
           ["@types/lightningcss", null],\
-          ["@types/node", null],\
+          ["@types/node", "npm:22.13.10"],\
           ["@types/sass", null],\
           ["@types/sass-embedded", null],\
           ["@types/stylus", null],\

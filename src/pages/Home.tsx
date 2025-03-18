@@ -1,7 +1,14 @@
-import "../styles/base.css"
+import ButtonListTemplate, { ButtonListTempltateProps } from "../components/shared/template/ButtonList";
+
+const homePageLinkItems:ButtonListTempltateProps['linkItems'] = [
+  {
+    path: "/text",
+    label: "text layout"
+  }
+];
 
 const HomePage = () => {
-  return <h1>Home</h1>
+  return <ButtonListTemplate title="HOME" linkItems={homePageLinkItems}/>
 };
 
 export default HomePage;
