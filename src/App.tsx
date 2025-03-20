@@ -5,6 +5,7 @@ import HomePage from "./pages/Home";
 import TextPage from "./pages/Text";
 import ImagesPage from "./pages/Image";
 import ImageVersion01 from "./pages/Image/Version01";
+import ImageVersion02 from "./pages/Image/Version02";
 
 function App () {
   return (
@@ -16,6 +17,7 @@ function App () {
         </Route>
         <Route path="/image" element={<ImagesPage/>}>
           <Route path="version01" element={<ImageVersion01/>}/>
+          <Route path="version02" element={<ImageVersion02/>}/>
         </Route>
       </Routes> 
     </BrowserRouter>
