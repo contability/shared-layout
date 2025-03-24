@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const LayoutVersion01Skeleton = () => {
+const ContentLayoutSkeleton = () => {
   return (
     <>
     {/* <!-- 첫 번째 스켈레톤 아이템 --> */}
@@ -39,11 +39,11 @@ const LayoutVersion01Skeleton = () => {
   );
 };
 
-const LayoutVersion01 = () => {
+const ContentLayout = () => {
   const [isLoading, setIsLoading] = useState(true);
   
   return <>
-    {isLoading && <LayoutVersion01Skeleton/>}
+    {isLoading && <ContentLayoutSkeleton/>}
     <div className={`space-y-6 ${isLoading ? "hidden" : "block"}`}>
       {/* 제목 섹션 */}
       <div className="space-y-3 mb-6">
@@ -88,4 +88,4 @@ const LayoutVersion01 = () => {
   </>
 };
 
-export default LayoutVersion01;
+export default ContentLayout;

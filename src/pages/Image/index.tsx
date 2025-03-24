@@ -4,12 +4,12 @@ const basePath = "/image";
 
 const imagePageLinkItems:ButtonListTempltateProps['linkItems'] = [
   {
-    path: `${basePath}/version01`,
-    label: "version01"
+    path: `${basePath}/pulse`,
+    label: "pulse"
   },
   {
-    path: `${basePath}/version02`,
-    label: "version02"
+    path: `${basePath}/shimmer`,
+    label: "shimmer"
   }
 ];
 

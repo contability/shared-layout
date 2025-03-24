@@ -4,8 +4,8 @@ const basePath = "/layout";
 
 const layoutPageLinkItems:LayoutListTempltateProps['linkItems'] = [
   {
-    path: `${basePath}/version01`,
-    label: "version01"
+    path: `${basePath}/content`,
+    label: "content"
   },
 ];
 

@@ -4,10 +4,10 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import HomePage from "./pages/Home";
 import TextPage from "./pages/Text";
 import ImagesPage from "./pages/Image";
-import ImageVersion01 from "./pages/Image/Version01";
-import ImageVersion02 from "./pages/Image/Version02";
 import LayoutsPage from "./pages/layout";
-import LayoutVersion01 from "./pages/layout/Version01";
+import ContentLayout from "./pages/layout/ContentLayout";
+import PulseImage from "./pages/Image/Pulse";
+import ShimmerImage from "./pages/Image/shimmer";
 
 function App () {
   return (
@@ -18,11 +18,11 @@ function App () {
           <Route path="version01" element={<TextVersion01/>}/>
         </Route>
         <Route path="/image" element={<ImagesPage/>}>
-          <Route path="version01" element={<ImageVersion01/>}/>
-          <Route path="version02" element={<ImageVersion02/>}/>
+          <Route path="pulse" element={<PulseImage/>}/>
+          <Route path="shimmer" element={<ShimmerImage/>}/>
         </Route>
         <Route path="/layout" element={<LayoutsPage/>}>
-          <Route path="version01" element={<LayoutVersion01/>}/>
+          <Route path="content" element={<ContentLayout/>}/>
         </Route>
       </Routes> 
     </BrowserRouter>

@@ -8,15 +8,14 @@ const Result01 = () => {
         console.log(result);
         return result;
       })
-
-      return data;
+        return data;
     } catch (error) {
       console.error("데이터 불러오기 실패:", error);
     }
   }
 
 useEffect(() => {
-  fetchData();
+    fetchData();
 }, []);
 
   if(!fetchData) return null;
