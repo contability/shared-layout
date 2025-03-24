@@ -9,6 +9,10 @@ const homePageLinkItems:ButtonListTempltateProps['linkItems'] = [
     path: "/image",
     label: "image layout"
   },
+  {
+    path: "/layout",
+    label: "layout layout"
+  },
 
 ];
 
