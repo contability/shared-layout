@@ -8,6 +8,8 @@ import LayoutsPage from "./pages/layout";
 import ContentLayout from "./pages/layout/ContentLayout";
 import PulseImage from "./pages/Image/Pulse";
 import ShimmerImage from "./pages/Image/shimmer";
+import ModalsPage from "./pages/Modal";
+import ModalVersion01 from "./pages/Modal/Version01";
 
 function App () {
   return (
@@ -23,6 +25,9 @@ function App () {
         </Route>
         <Route path="/layout" element={<LayoutsPage/>}>
           <Route path="content" element={<ContentLayout/>}/>
+        </Route>
+        <Route path="/modal" element={<ModalsPage/>}>
+          <Route path="version01" element={<ModalVersion01/>}/>
         </Route>
       </Routes> 
     </BrowserRouter>

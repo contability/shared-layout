@@ -13,6 +13,10 @@ const homePageLinkItems:ButtonListTempltateProps['linkItems'] = [
     path: "/layout",
     label: "layout layout"
   },
+  {
+    path: "/modal",
+    label: "modal layout"
+  },
 
 ];
 
