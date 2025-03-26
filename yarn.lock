@@ -1619,6 +1619,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"framer-motion@npm:^12.6.0":
+  version: 12.6.0
+  resolution: "framer-motion@npm:12.6.0"
+  dependencies:
+    motion-dom: "npm:^12.6.0"
+    motion-utils: "npm:^12.5.0"
+    tslib: "npm:^2.4.0"
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 10c0/7df86a66dee0d715814ec969b3c8b17be97ad20cb351257e77e3d805e0e41d44fd8126431c046f079a0c6727037a02e3f76b74ae5cbe36b8916bb0d2ccb3762c
+  languageName: node
+  linkType: hard
+
 "fs-minipass@npm:^3.0.0":
   version: 3.0.3
   resolution: "fs-minipass@npm:3.0.3"
@@ -2118,6 +2140,43 @@ __metadata:
   bin:
     mkdirp: dist/cjs/src/bin.js
   checksum: 10c0/9f2b975e9246351f5e3a40dcfac99fcd0baa31fbfab615fe059fb11e51f10e4803c63de1f384c54d656e4db31d000e4767e9ef076a22e12a641357602e31d57d
+  languageName: node
+  linkType: hard
+
+"motion-dom@npm:^12.6.0":
+  version: 12.6.0
+  resolution: "motion-dom@npm:12.6.0"
+  dependencies:
+    motion-utils: "npm:^12.5.0"
+  checksum: 10c0/5fe6469f723089a2c68796fe3a2389b4bc5a9c898d386891c02023c46f5001d14b8009696c454450a97fdd56f4832b0226b5edc088b20b048e69d20fd9c921a9
+  languageName: node
+  linkType: hard
+
+"motion-utils@npm:^12.5.0":
+  version: 12.5.0
+  resolution: "motion-utils@npm:12.5.0"
+  checksum: 10c0/f556240efda96a4bb86b13bb0e6cad689b2665ca688b2616585a7c7db182e3b8d93377ff1fb3782ca0088a4a8aa6dd5e47e81fda5c19ab334f01812eade639ef
+  languageName: node
+  linkType: hard
+
+"motion@npm:^12.6.0":
+  version: 12.6.0
+  resolution: "motion@npm:12.6.0"
+  dependencies:
+    framer-motion: "npm:^12.6.0"
+    tslib: "npm:^2.4.0"
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 10c0/3e59941fe4f9029633b9a408f6abe0bb5af7121be80b880601f6b069f02b82d4ae4e13e20fb98cf884467e7cbff23b6dbad55009d87f84adce882cc12b553daf
   languageName: node
   linkType: hard
 
@@ -2777,6 +2836,7 @@ __metadata:
     eslint-plugin-react-hooks: "npm:^5.1.0"
     eslint-plugin-react-refresh: "npm:^0.4.19"
     globals: "npm:^15.15.0"
+    motion: "npm:^12.6.0"
     postcss: "npm:^8.5.3"
     prettier: "npm:^3.5.3"
     prettier-plugin-tailwindcss: "npm:^0.6.11"
@@ -3042,6 +3102,13 @@ __metadata:
   version: 0.1.13
   resolution: "ts-interface-checker@npm:0.1.13"
   checksum: 10c0/232509f1b84192d07b81d1e9b9677088e590ac1303436da1e92b296e9be8e31ea042e3e1fd3d29b1742ad2c959e95afe30f63117b8f1bc3a3850070a5142fea7
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.4.0":
+  version: 2.8.1
+  resolution: "tslib@npm:2.8.1"
+  checksum: 10c0/9c4759110a19c53f992d9aae23aac5ced636e99887b51b9e61def52611732872ff7668757d4e4c61f19691e36f4da981cd9485e869b4a7408d689f6bf1f14e62
   languageName: node
   linkType: hard
 
