@@ -1,27 +1,32 @@
-import ButtonListTemplate, { ButtonListTempltateProps } from "../components/shared/template/ButtonList";
+import ButtonListTemplate, {
+  ButtonListTempltateProps,
+} from "../components/shared/template/ButtonList";
 
-const homePageLinkItems:ButtonListTempltateProps['linkItems'] = [
+const homePageLinkItems: ButtonListTempltateProps["linkItems"] = [
   {
     path: "/text",
-    label: "text layout"
+    label: "text layout",
   },
   {
     path: "/image",
-    label: "image layout"
+    label: "image layout",
   },
   {
     path: "/layout",
-    label: "layout layout"
+    label: "layout layout",
   },
   {
     path: "/modal",
-    label: "modal layout"
+    label: "modal layout",
   },
-
+  {
+    path: "/address",
+    label: "address layout",
+  },
 ];
 
 const HomePage = () => {
-  return <ButtonListTemplate title="HOME" linkItems={homePageLinkItems}/>
+  return <ButtonListTemplate title="HOME" linkItems={homePageLinkItems} />;
 };
 
 export default HomePage;

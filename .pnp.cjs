@@ -42,6 +42,7 @@ const RAW_RUNTIME_STATE =
           ["prettier", "npm:3.5.3"],\
           ["prettier-plugin-tailwindcss", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:0.6.11"],\
           ["react", "npm:19.0.0"],\
+          ["react-daum-postcode", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:3.2.0"],\
           ["react-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:19.0.0"],\
           ["react-router-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:7.3.0"],\
           ["tailwind-scrollbar-hide", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:2.0.0"],\
@@ -3215,6 +3216,28 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["react-daum-postcode", [\
+      ["npm:3.2.0", {\
+        "packageLocation": "./.yarn/cache/react-daum-postcode-npm-3.2.0-0a348d1fe7-3ddb92430d.zip/node_modules/react-daum-postcode/",\
+        "packageDependencies": [\
+          ["react-daum-postcode", "npm:3.2.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:3.2.0", {\
+        "packageLocation": "./.yarn/__virtual__/react-daum-postcode-virtual-290be2b9ab/0/cache/react-daum-postcode-npm-3.2.0-0a348d1fe7-3ddb92430d.zip/node_modules/react-daum-postcode/",\
+        "packageDependencies": [\
+          ["react-daum-postcode", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:3.2.0"],\
+          ["@types/react", "npm:19.0.11"],\
+          ["react", "npm:19.0.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["react-dom", [\
       ["npm:19.0.0", {\
         "packageLocation": "./.yarn/cache/react-dom-npm-19.0.0-b7981c573e-a36ce7ab50.zip/node_modules/react-dom/",\
@@ -3460,6 +3483,7 @@ const RAW_RUNTIME_STATE =
           ["prettier", "npm:3.5.3"],\
           ["prettier-plugin-tailwindcss", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:0.6.11"],\
           ["react", "npm:19.0.0"],\
+          ["react-daum-postcode", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:3.2.0"],\
           ["react-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:19.0.0"],\
           ["react-router-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:7.3.0"],\
           ["tailwind-scrollbar-hide", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:2.0.0"],\
