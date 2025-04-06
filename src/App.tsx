@@ -10,9 +10,8 @@ import PulseImage from "./pages/Image/Pulse";
 import ModalsPage from "./pages/Modal";
 import ModalVersion01 from "./pages/Modal/Version01";
 import ShimmerImage from "./pages/Image/Shimmer";
-import AddressDaumPostcodeEmbed from "./pages/address/daum-postcode/embed";
-import AddressPage from "./pages/address";
-import AddressDaumPostcodePopup from "./pages/address/daum-postcode/popup";
+import FilePage from "./pages/file";
+import FileVersion01 from "./pages/file/version01";
 
 function App() {
   return (
@@ -32,15 +31,8 @@ function App() {
         <Route path="/modal" element={<ModalsPage />}>
           <Route path="version01" element={<ModalVersion01 />} />
         </Route>
-        <Route path="/address" element={<AddressPage />}>
-          <Route
-            path="daum-postcode/embed"
-            element={<AddressDaumPostcodeEmbed />}
-          />
-          <Route
-            path="daum-postcode/popup"
-            element={<AddressDaumPostcodePopup />}
-          />
+        <Route path="/file" element={<FilePage />}>
+          <Route path="version01" element={<FileVersion01 />} />
         </Route>
       </Routes>
     </BrowserRouter>

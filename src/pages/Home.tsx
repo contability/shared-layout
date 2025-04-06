@@ -20,8 +20,8 @@ const homePageLinkItems: ButtonListTempltateProps["linkItems"] = [
     label: "modal layout",
   },
   {
-    path: "/address",
-    label: "address layout",
+    path: "/file",
+    label: "file layout",
   },
 ];
 

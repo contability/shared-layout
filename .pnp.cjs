@@ -36,6 +36,7 @@ const RAW_RUNTIME_STATE =
           ["eslint", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:9.22.0"],\
           ["eslint-plugin-react-hooks", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:5.2.0"],\
           ["eslint-plugin-react-refresh", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:0.4.19"],\
+          ["focus-trap-react", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:11.0.3"],\
           ["globals", "npm:15.15.0"],\
           ["motion", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:12.6.0"],\
           ["postcss", "npm:8.5.3"],\
@@ -43,6 +44,7 @@ const RAW_RUNTIME_STATE =
           ["prettier-plugin-tailwindcss", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:0.6.11"],\
           ["react", "npm:19.0.0"],\
           ["react-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:19.0.0"],\
+          ["react-icons", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:5.5.0"],\
           ["react-router-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:7.3.0"],\
           ["shared-layout", "workspace:."],\
           ["tailwind-scrollbar-hide", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:2.0.0"],\
@@ -2021,6 +2023,44 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["focus-trap", [\
+      ["npm:7.6.4", {\
+        "packageLocation": "./.yarn/cache/focus-trap-npm-7.6.4-d90a1ce800-ed810d47fd.zip/node_modules/focus-trap/",\
+        "packageDependencies": [\
+          ["focus-trap", "npm:7.6.4"],\
+          ["tabbable", "npm:6.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["focus-trap-react", [\
+      ["npm:11.0.3", {\
+        "packageLocation": "./.yarn/cache/focus-trap-react-npm-11.0.3-2950613263-5a48297209.zip/node_modules/focus-trap-react/",\
+        "packageDependencies": [\
+          ["focus-trap-react", "npm:11.0.3"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:11.0.3", {\
+        "packageLocation": "./.yarn/__virtual__/focus-trap-react-virtual-0f4ab0dc82/0/cache/focus-trap-react-npm-11.0.3-2950613263-5a48297209.zip/node_modules/focus-trap-react/",\
+        "packageDependencies": [\
+          ["@types/react", "npm:19.0.11"],\
+          ["@types/react-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:19.0.4"],\
+          ["focus-trap", "npm:7.6.4"],\
+          ["focus-trap-react", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:11.0.3"],\
+          ["react", "npm:19.0.0"],\
+          ["react-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:19.0.0"],\
+          ["tabbable", "npm:6.2.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["foreground-child", [\
       ["npm:3.3.1", {\
         "packageLocation": "./.yarn/cache/foreground-child-npm-3.3.1-b7775fda04-8986e4af24.zip/node_modules/foreground-child/",\
@@ -3239,6 +3279,28 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["react-icons", [\
+      ["npm:5.5.0", {\
+        "packageLocation": "./.yarn/cache/react-icons-npm-5.5.0-906730a3cf-a24309bfc9.zip/node_modules/react-icons/",\
+        "packageDependencies": [\
+          ["react-icons", "npm:5.5.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:5.5.0", {\
+        "packageLocation": "./.yarn/__virtual__/react-icons-virtual-0ffe692d1b/0/cache/react-icons-npm-5.5.0-906730a3cf-a24309bfc9.zip/node_modules/react-icons/",\
+        "packageDependencies": [\
+          ["@types/react", "npm:19.0.11"],\
+          ["react", "npm:19.0.0"],\
+          ["react-icons", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:5.5.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["react-router", [\
       ["npm:7.3.0", {\
         "packageLocation": "./.yarn/cache/react-router-npm-7.3.0-4de1f219c0-2965a8a759.zip/node_modules/react-router/",\
@@ -3454,6 +3516,7 @@ const RAW_RUNTIME_STATE =
           ["eslint", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:9.22.0"],\
           ["eslint-plugin-react-hooks", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:5.2.0"],\
           ["eslint-plugin-react-refresh", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:0.4.19"],\
+          ["focus-trap-react", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:11.0.3"],\
           ["globals", "npm:15.15.0"],\
           ["motion", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:12.6.0"],\
           ["postcss", "npm:8.5.3"],\
@@ -3461,6 +3524,7 @@ const RAW_RUNTIME_STATE =
           ["prettier-plugin-tailwindcss", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:0.6.11"],\
           ["react", "npm:19.0.0"],\
           ["react-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:19.0.0"],\
+          ["react-icons", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:5.5.0"],\
           ["react-router-dom", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:7.3.0"],\
           ["shared-layout", "workspace:."],\
           ["tailwind-scrollbar-hide", "virtual:ed55abfbcb331dc2af6ac273378c1ef6fb8ede56c9f550165b387428a04c2500039fed6e38e761063b7721243486c3fd72077e6f7124657afaada5dc6f56dabb#npm:2.0.0"],\
@@ -3640,6 +3704,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/supports-preserve-symlinks-flag-npm-1.0.0-f17c4d0028-6c40323407.zip/node_modules/supports-preserve-symlinks-flag/",\
         "packageDependencies": [\
           ["supports-preserve-symlinks-flag", "npm:1.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["tabbable", [\
+      ["npm:6.2.0", {\
+        "packageLocation": "./.yarn/cache/tabbable-npm-6.2.0-5a74c8b4e2-ced8b38f05.zip/node_modules/tabbable/",\
+        "packageDependencies": [\
+          ["tabbable", "npm:6.2.0"]\
         ],\
         "linkType": "HARD"\
       }]\
