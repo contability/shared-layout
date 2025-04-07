@@ -13,6 +13,7 @@ import ShimmerImage from "./pages/Image/Shimmer";
 import FilePage from "./pages/file";
 import FileVersion01 from "./pages/file/version01";
 import FileVersion02 from "./pages/file/version02";
+import PinchZoomImage from "./pages/Image/pinch-zoom";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/image" element={<ImagesPage />}>
           <Route path="pulse" element={<PulseImage />} />
           <Route path="shimmer" element={<ShimmerImage />} />
+          <Route path="pinch-zoom" element={<PinchZoomImage />} />
         </Route>
         <Route path="/layout" element={<LayoutsPage />}>
           <Route path="content" element={<ContentLayout />} />
