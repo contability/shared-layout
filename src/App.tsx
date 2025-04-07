@@ -12,6 +12,7 @@ import ModalVersion01 from "./pages/Modal/Version01";
 import ShimmerImage from "./pages/Image/Shimmer";
 import FilePage from "./pages/file";
 import FileVersion01 from "./pages/file/version01";
+import FileVersion02 from "./pages/file/version02";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         </Route>
         <Route path="/file" element={<FilePage />}>
           <Route path="version01" element={<FileVersion01 />} />
+          <Route path="version02" element={<FileVersion02 />} />
         </Route>
       </Routes>
     </BrowserRouter>

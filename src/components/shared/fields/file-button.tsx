@@ -3,7 +3,6 @@ import { ChangeEvent } from "react";
 interface FileButtonProps {
   label?: string;
   id?: string;
-  colorType?: "default" | "line" | "point" | "color" | "white";
   className?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }

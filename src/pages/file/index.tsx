@@ -9,6 +9,10 @@ const filePageLinkItems: ButtonListTempltateProps["linkItems"] = [
     path: `${basePath}/version01`,
     label: "version01",
   },
+  {
+    path: `${basePath}/version02`,
+    label: "version02",
+  },
 ];
 
 const FilePage = () => {

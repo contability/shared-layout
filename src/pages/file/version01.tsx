@@ -22,7 +22,6 @@ const FileVersion01 = () => {
                 className="p-2"
                 label="Upload"
                 id="file-button"
-                colorType="white"
                 onChange={setFilesData}
               />
             </div>
