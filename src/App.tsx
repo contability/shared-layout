@@ -14,6 +14,8 @@ import FilePage from "./pages/file";
 import FileVersion01 from "./pages/file/version01";
 import FileVersion02 from "./pages/file/version02";
 import PinchZoomImage from "./pages/Image/pinch-zoom";
+import InViewPage from "./pages/in-view";
+import InViewVersion01 from "./pages/in-view/version01";
 
 function App() {
   return (
@@ -37,6 +39,9 @@ function App() {
         <Route path="/file" element={<FilePage />}>
           <Route path="version01" element={<FileVersion01 />} />
           <Route path="version02" element={<FileVersion02 />} />
+        </Route>
+        <Route path="/in-view" element={<InViewPage />}>
+          <Route path="version01" element={<InViewVersion01 />} />
         </Route>
       </Routes>
     </BrowserRouter>

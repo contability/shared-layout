@@ -1,8 +1,8 @@
 "use client";
 
 import { ChangeEvent, useCallback, useState } from "react";
-import AlertModal from "../pages/Modal/alert";
-import Modal from "../components/shared/modal";
+import AlertModal from "../../pages/Modal/alert";
+import Modal from "../../components/shared/modal";
 
 interface UseFileProps {
   maxFileSize?: number;

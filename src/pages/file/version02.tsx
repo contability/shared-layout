@@ -1,16 +1,10 @@
-import useFile from "../../hooks/useFile";
 import { FaRegTrashAlt } from "react-icons/fa";
 import DropZone from "../../components/shared/fields/drop-zone";
+import useFile from "../../lib/hooks/useFile";
 
 const FileVersion02 = () => {
-  const {
-    files,
-    setFilesData,
-    removeFileData,
-    // handleDropFiles,
-    clearFileData,
-    ErrorModals,
-  } = useFile();
+  const { files, setFilesData, removeFileData, clearFileData, ErrorModals } =
+    useFile();
 
   return (
     <>

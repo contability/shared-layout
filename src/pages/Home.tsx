@@ -13,7 +13,7 @@ const homePageLinkItems: ButtonListTempltateProps["linkItems"] = [
   },
   {
     path: "/layout",
-    label: "layout layout",
+    label: "UI layout",
   },
   {
     path: "/modal",
@@ -22,6 +22,10 @@ const homePageLinkItems: ButtonListTempltateProps["linkItems"] = [
   {
     path: "/file",
     label: "file layout",
+  },
+  {
+    path: "/in-view",
+    label: "intersection-observer layout",
   },
 ];
 

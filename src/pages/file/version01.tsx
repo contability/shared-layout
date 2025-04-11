@@ -1,6 +1,6 @@
-import useFile from "../../hooks/useFile";
 import FileButton from "../../components/shared/fields/file-button";
 import { FaRegTrashAlt } from "react-icons/fa";
+import useFile from "../../lib/hooks/useFile";
 
 const FileVersion01 = () => {
   const { files, setFilesData, removeFileData, clearFileData, ErrorModals } =
