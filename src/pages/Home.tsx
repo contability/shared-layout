@@ -27,6 +27,10 @@ const homePageLinkItems: ButtonListTempltateProps["linkItems"] = [
     path: "/in-view",
     label: "intersection-observer layout",
   },
+  {
+    path: "/navigation",
+    label: "navigation layout",
+  },
 ];
 
 const HomePage = () => {

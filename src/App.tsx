@@ -16,6 +16,8 @@ import FileVersion02 from "./pages/file/version02";
 import PinchZoomImage from "./pages/Image/pinch-zoom";
 import InViewPage from "./pages/in-view";
 import InViewVersion01 from "./pages/in-view/version01";
+import ScrollFadeNavigation from "./pages/navigation/scroll-fade";
+import NavigationPage from "./pages/navigation";
 
 function App() {
   return (
@@ -42,6 +44,9 @@ function App() {
         </Route>
         <Route path="/in-view" element={<InViewPage />}>
           <Route path="version01" element={<InViewVersion01 />} />
+        </Route>
+        <Route path="/navigation" element={<NavigationPage />}>
+          <Route path="scroll-fade" element={<ScrollFadeNavigation />} />
         </Route>
       </Routes>
     </BrowserRouter>
