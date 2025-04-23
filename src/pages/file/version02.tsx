@@ -1,5 +1,5 @@
 import { FaRegTrashAlt } from "react-icons/fa";
-import DropZone from "../../components/shared/fields/drop-zone";
+import DropZone from "../../components/shared/fields/file/drop-zone";
 import useFile from "../../lib/hooks/useFile";
 
 const FileVersion02 = () => {

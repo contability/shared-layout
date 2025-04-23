@@ -14,7 +14,7 @@ const NavigationPageLinkItems: LayoutListTempltateProps["linkItems"] = [
 const NavigationPage = () => {
   return (
     <ButtonListTemplate
-      title="Scroll Fade"
+      title="NAVIGATION"
       linkItems={NavigationPageLinkItems}
     />
   );

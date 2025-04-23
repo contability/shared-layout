@@ -18,6 +18,8 @@ import InViewPage from "./pages/in-view";
 import InViewVersion01 from "./pages/in-view/version01";
 import ScrollFadeNavigation from "./pages/navigation/scroll-fade";
 import NavigationPage from "./pages/navigation";
+import FieldsPage from "./pages/fields";
+import InputInteractionPlaceHolder from "./pages/fields/input/interaction-placeholder";
 
 function App() {
   return (
@@ -47,6 +49,12 @@ function App() {
         </Route>
         <Route path="/navigation" element={<NavigationPage />}>
           <Route path="scroll-fade" element={<ScrollFadeNavigation />} />
+        </Route>
+        <Route path="/fields" element={<FieldsPage />}>
+          <Route
+            path="/fields/input/interaction-placeholder"
+            element={<InputInteractionPlaceHolder />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>

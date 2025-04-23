@@ -1,4 +1,4 @@
-import FileButton from "../../components/shared/fields/file-button";
+import FileButton from "../../components/shared/fields/file/file-button";
 import { FaRegTrashAlt } from "react-icons/fa";
 import useFile from "../../lib/hooks/useFile";
 
