@@ -26,6 +26,7 @@ const useFile = (props?: UseFileProps) => {
     "avi",
     "mov",
     "wmv",
+    "webp",
   ];
 
   // file 객체 state
