@@ -20,6 +20,9 @@ import ScrollFadeNavigation from "./pages/navigation/scroll-fade";
 import NavigationPage from "./pages/navigation";
 import FieldsPage from "./pages/fields";
 import InputInteractionPlaceHolder from "./pages/fields/input/interaction-placeholder";
+import ProgressPage from "./pages/fields/progress";
+import ProgressVersion01 from "./pages/fields/progress/version01";
+import InputPage from "./pages/fields/input";
 
 function App() {
   return (
@@ -51,10 +54,15 @@ function App() {
           <Route path="scroll-fade" element={<ScrollFadeNavigation />} />
         </Route>
         <Route path="/fields" element={<FieldsPage />}>
-          <Route
-            path="/fields/input/interaction-placeholder"
-            element={<InputInteractionPlaceHolder />}
-          />
+          <Route path="/fields/input" element={<InputPage />}>
+            <Route
+              path="interaction-placeholder"
+              element={<InputInteractionPlaceHolder />}
+            />
+          </Route>
+          <Route path="/fields/progress" element={<ProgressPage />}>
+            <Route path="version01" element={<ProgressVersion01 />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
