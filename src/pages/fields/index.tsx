@@ -44,6 +44,26 @@ const fieldCategories: CategoryItem[] = [
       </svg>
     ),
   },
+  {
+    path: `${basePath}/select-box`,
+    label: "select-box",
+    description: "선택 상태 표시 컴포넌트",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-8 w-8"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <path d="M20 7H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1z" />
+        <path d="M4 12h16" />
+        <path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />
+        <path d="M7 17v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2" />
+      </svg>
+    ),
+  },
 ];
 
 const FieldsPage = () => {

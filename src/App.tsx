@@ -23,6 +23,8 @@ import InputInteractionPlaceHolder from "./pages/fields/input/interaction-placeh
 import ProgressPage from "./pages/fields/progress";
 import ProgressVersion01 from "./pages/fields/progress/version01";
 import InputPage from "./pages/fields/input";
+import SelectBoxPage from "./pages/fields/select-box";
+import SelectBoxVersion01 from "./pages/fields/select-box/version01";
 
 function App() {
   return (
@@ -62,6 +64,9 @@ function App() {
           </Route>
           <Route path="/fields/progress" element={<ProgressPage />}>
             <Route path="version01" element={<ProgressVersion01 />} />
+          </Route>
+          <Route path="/fields/select-box" element={<SelectBoxPage />}>
+            <Route path="version01" element={<SelectBoxVersion01 />} />
           </Route>
         </Route>
       </Routes>
