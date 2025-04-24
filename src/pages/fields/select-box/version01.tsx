@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import DefaultSelectBox from "../../../components/shared/fields/select-box/version01";
+import DefaultSelectBox from "../../../components/shared/fields/select-box/default";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
