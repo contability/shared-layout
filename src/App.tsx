@@ -25,6 +25,8 @@ import ProgressVersion01 from "./pages/fields/progress/version01";
 import InputPage from "./pages/fields/input";
 import SelectBoxPage from "./pages/fields/select-box";
 import SelectBoxVersion01 from "./pages/fields/select-box/version01";
+import TablePage from "./pages/table";
+import ScrollableTable from "./pages/table/scrollable";
 
 function App() {
   return (
@@ -68,6 +70,9 @@ function App() {
           <Route path="/fields/select-box" element={<SelectBoxPage />}>
             <Route path="version01" element={<SelectBoxVersion01 />} />
           </Route>
+        </Route>
+        <Route path="/table" element={<TablePage />}>
+          <Route path="scrollable" element={<ScrollableTable />} />
         </Route>
       </Routes>
     </BrowserRouter>

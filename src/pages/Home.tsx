@@ -35,6 +35,10 @@ const homePageLinkItems: ButtonListTempltateProps["linkItems"] = [
     path: "/fields",
     label: "fields layout",
   },
+  {
+    path: "/table",
+    label: "table layout",
+  },
 ];
 
 const HomePage = () => {
