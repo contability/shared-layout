@@ -2,7 +2,7 @@ import CategoryCardList, {
   CategoryItem,
 } from "../../components/shared/template/CategoryCardList";
 import NestedButtonListTemplate from "../../components/shared/template/NestedButtonList";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const basePath = "/file";
 
@@ -79,6 +79,12 @@ const FilePage = () => {
           linkItems={filePageLinkItems}
         />
       )}
+      <div>
+        <span>참고</span>
+        <Link to="https://handhand.tistory.com/283">
+          https://handhand.tistory.com/283
+        </Link>
+      </div>
     </>
   );
 };
