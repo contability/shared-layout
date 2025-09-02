@@ -80,18 +80,29 @@ const useFile = (props?: UseFileProps) => {
   // #region 파일 유효성 검사
   /**
    *  파일 유효성 검사 함수
-   * @param fileDatas 새로 등록될 파일 목록
+   * @param newFiles 새로 등록될 파일 목록
    * @returns 유효성 검사 통과 여부
    */
-  const checkFiles = (fileDatas: File[]) => {
+  const validateFiles = (newFiles: File[]) => {
+    // 이름이 중복되는 이미지 파일 검증
+    const hasDuplicateFiles = files.some((existingFile) =>
+      newFiles.some((newFile) => existingFile.name === newFile.name)
+    );
+
+    if (hasDuplicateFiles) {
+      // TODO: 모달로 변경 필요.
+      alert("Duplicate files detected. Please select different files.");
+      return;
+    }
+
     // 기존 state의 파일 개수 + 새로 등록될 파일 개수가 MAX FILE AMOUNT에서 정한 개수를 넘어간다면
-    if (files.length + fileDatas.length > MAX_FILE_AMOUNT) {
+    if (files.length + newFiles.length > MAX_FILE_AMOUNT) {
       setIsMaxAmountModalOpen(true);
       return false;
     }
 
     // 파일 용량 체크
-    const isValidFileSize = fileDatas.every(
+    const isValidFileSize = newFiles.every(
       (file) => file.size <= MAX_FILE_SIZE_BYTES
     );
     if (!isValidFileSize) {
@@ -100,7 +111,7 @@ const useFile = (props?: UseFileProps) => {
     }
 
     // 파일 확장자 체크
-    const isValidFileExtension = fileDatas.every((file) => {
+    const isValidFileExtension = newFiles.every((file) => {
       if (file.name.lastIndexOf(".") > 0) {
         const fileExtension = file.name.substring(
           file.name.lastIndexOf(".") + 1,
@@ -121,9 +132,9 @@ const useFile = (props?: UseFileProps) => {
 
   /** 파일 state 등록 */
   const setFilesData = (e: ChangeEvent<HTMLInputElement>) => {
-    const fileDatas: File[] = Array.from(e.target.files || []);
+    const newFiles: File[] = Array.from(e.target.files || []);
 
-    if (checkFiles(fileDatas)) setFiles([...files, ...fileDatas]);
+    if (validateFiles(newFiles)) setFiles([...files, ...newFiles]);
   };
 
   /** 파일 state에서 파일 제거 */

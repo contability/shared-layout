@@ -50,5 +50,5 @@
     "node": "22.14.0",
     "yarn": "4.7.0"
   },
-  "packageManager": "yarn@4.7.0"
+  "packageManager": "yarn@4.9.1"
 }
