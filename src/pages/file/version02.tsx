@@ -1,10 +1,15 @@
 import { FaRegTrashAlt } from "react-icons/fa";
 import DropZone from "../../components/shared/fields/file/drop-zone";
-import useFile from "../../lib/hooks/useFile";
+import useFileManager from "../../lib/hooks/useFile";
 
 const FileVersion02 = () => {
-  const { files, setFilesData, removeFileData, clearFileData, ErrorModals } =
-    useFile();
+  const {
+    files,
+    handleFileAdd,
+    handleFileRemove,
+    handleFilesClear,
+    FileErrorModals,
+  } = useFileManager();
 
   return (
     <>
@@ -13,7 +18,7 @@ const FileVersion02 = () => {
           <h2 className="text-4xl text-center">Drag and Drop File</h2>
           <button
             className="p-2 bg-gray-50 text-gray-500 rounded-lg hover:text-black float-right"
-            onClick={clearFileData}
+            onClick={handleFilesClear}
           >
             all clear file
           </button>
@@ -21,7 +26,7 @@ const FileVersion02 = () => {
 
         <DropZone
           className="w-full min-h-[200px] rounded-[8px] bg-gray-50 flex items-center justify-center cursor-pointer transition-all hover:bg-gray-100"
-          onChange={setFilesData}
+          onChange={handleFileAdd}
           // onDropFiles={handleDropFiles}
         >
           <div className="text-center p-6">
@@ -45,7 +50,7 @@ const FileVersion02 = () => {
                 >
                   <button
                     className="text-gray-500 hover:text-black"
-                    onClick={() => removeFileData(fileIndex)}
+                    onClick={() => handleFileRemove(fileIndex)}
                   >
                     <FaRegTrashAlt size={16} />
                   </button>
@@ -58,8 +63,8 @@ const FileVersion02 = () => {
           </div>
         )}
       </div>
-      {/* FIXME: ErrorModals들 사라질 때 motion exit 애니메이션 적용 안되는 문제 있음. 수정 필요 */}
-      <ErrorModals />
+      {/* FIXME: FileErrorModals들 사라질 때 motion exit 애니메이션 적용 안되는 문제 있음. 수정 필요 */}
+      <FileErrorModals />
     </>
   );
 };

@@ -1,172 +1,90 @@
 "use client";
 
-import { ChangeEvent, useCallback, useState } from "react";
-import AlertModal from "../../pages/Modal/alert";
-import Modal from "../../components/shared/modal";
+import { ChangeEvent, useCallback, useMemo, useState } from "react";
+import { FileManagerOptions, FileManagerResult } from "../../types/File";
+import { useFileErrorModals } from "./useFileErrorModals";
+import {
+  validateFiles,
+  ALLOWED_FILE_EXTENSIONS,
+} from "../utils/fileValidation";
 
-interface UseFileProps {
-  maxFileSize?: number;
-  maxFileAmount?: number;
-}
+/**
+ * 파일 관리 훅
+ * 파일 업로드, 삭제, 유효성 검증 등을 관리한다
+ */
+const useFileManager = (options?: FileManagerOptions): FileManagerResult => {
+  const {
+    maxFileSizeMB = 50,
+    maxFileCount = 5,
+    allowedExtensions = ALLOWED_FILE_EXTENSIONS,
+  } = options || {};
 
-const useFile = (props?: UseFileProps) => {
-  const { maxFileSize = 50, maxFileAmount = 5 } = props || {};
-  // default - 50MB
-  const MAX_FILE_SIZE_BYTES = maxFileSize * 1024 * 1024;
-  // default - 5EA
-  const MAX_FILE_AMOUNT = maxFileAmount;
-  // 사용 가능한 확장자
-  const EXTENSION = [
-    "jpg",
-    "jpeg",
-    "png",
-    "gif",
-    "pdf",
-    "mp4",
-    "avi",
-    "mov",
-    "wmv",
-    "webp",
-  ];
-
-  // file 객체 state
   const [files, setFiles] = useState<File[]>([]);
 
-  // #region 모달
-  /** 파일 개수 초과 모달 props */
-  const [isMaxAmountModalOpen, setIsMaxAmountModalOpen] = useState(false);
-  const model_maxAmountModal = {
-    isOpen: isMaxAmountModalOpen,
-    closeModal: () => setIsMaxAmountModalOpen(false),
-    children: (
-      <AlertModal
-        onClose={() => setIsMaxAmountModalOpen(false)}
-        messages={[`File registration cannot exceed ${MAX_FILE_AMOUNT} files.`]}
-      />
-    ),
-  };
+  // 에러 모달 관리 훅
+  const {
+    showErrorModal,
+    FileErrorModals,
+    isModalOpen: isErrorModalOpen,
+  } = useFileErrorModals({
+    maxFileSizeMB,
+    maxFileCount,
+  });
 
-  /** 파일 크기 초과 모달 props */
-  const [isMaxSizeModalOpen, setIsMaxSizeModalOpen] = useState(false);
-  const model_maxSizeModal = {
-    isOpen: isMaxSizeModalOpen,
-    closeModal: () => setIsMaxSizeModalOpen(false),
-    children: (
-      <AlertModal
-        onClose={() => setIsMaxSizeModalOpen(false)}
-        messages={[`Please register only files less than ${maxFileSize}MB.`]}
-      />
-    ),
-  };
-
-  /** 파일 확장자 모달 props */
-  const [isExtensionModalOpen, setIsExtensionModalOpen] = useState(false);
-  const model_extensionModal = {
-    isOpen: isExtensionModalOpen,
-    closeModal: () => setIsExtensionModalOpen(false),
-    children: (
-      <AlertModal
-        onClose={() => setIsExtensionModalOpen(false)}
-        messages={[
-          `This is not a file format that can be registered.`,
-          `Please check the extensions that can be registered.`,
-          `[${EXTENSION.join(", ")}]`,
-        ]}
-      />
-    ),
-  };
-  // #endregion
-
-  // #region 파일 유효성 검사
-  /**
-   *  파일 유효성 검사 함수
-   * @param newFiles 새로 등록될 파일 목록
-   * @returns 유효성 검사 통과 여부
-   */
-  const validateFiles = (newFiles: File[]) => {
-    // 이름이 중복되는 이미지 파일 검증
-    const hasDuplicateFiles = files.some((existingFile) =>
-      newFiles.some((newFile) => existingFile.name === newFile.name)
-    );
-
-    if (hasDuplicateFiles) {
-      // TODO: 모달로 변경 필요.
-      alert("Duplicate files detected. Please select different files.");
-      return;
-    }
-
-    // 기존 state의 파일 개수 + 새로 등록될 파일 개수가 MAX FILE AMOUNT에서 정한 개수를 넘어간다면
-    if (files.length + newFiles.length > MAX_FILE_AMOUNT) {
-      setIsMaxAmountModalOpen(true);
-      return false;
-    }
-
-    // 파일 용량 체크
-    const isValidFileSize = newFiles.every(
-      (file) => file.size <= MAX_FILE_SIZE_BYTES
-    );
-    if (!isValidFileSize) {
-      setIsMaxSizeModalOpen(true);
-      return false;
-    }
-
-    // 파일 확장자 체크
-    const isValidFileExtension = newFiles.every((file) => {
-      if (file.name.lastIndexOf(".") > 0) {
-        const fileExtension = file.name.substring(
-          file.name.lastIndexOf(".") + 1,
-          file.name.length
-        );
-        return EXTENSION.includes(fileExtension);
-      }
-      return false;
-    });
-
-    if (!isValidFileExtension) {
-      setIsExtensionModalOpen(true);
-      return false;
-    }
-
-    return true;
-  };
-
-  /** 파일 state 등록 */
-  const setFilesData = (e: ChangeEvent<HTMLInputElement>) => {
-    const newFiles: File[] = Array.from(e.target.files || []);
-
-    if (validateFiles(newFiles)) setFiles([...files, ...newFiles]);
-  };
-
-  /** 파일 state에서 파일 제거 */
-  const removeFileData = useCallback(
-    (fileIndex: number) => {
-      const removeFiles = files.filter((_, index) => index !== fileIndex);
-      setFiles(removeFiles);
-    },
-    [files]
+  // 파일 유효성 검증 설정
+  const validationConfig = useMemo(
+    () => ({
+      maxFileSizeMB,
+      maxFileCount,
+      allowedExtensions,
+    }),
+    [maxFileSizeMB, maxFileCount, allowedExtensions]
   );
 
-  /** 파일 state 내 파일 모두 제거 */
-  const clearFileData = useCallback(() => {
+  /**
+   * 파일 추가 핸들러
+   */
+  const handleFileAdd = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      const newFiles: File[] = Array.from(event.target.files || []);
+      if (newFiles.length === 0) return;
+
+      const validationResult = validateFiles(files, newFiles, validationConfig);
+
+      if (!validationResult.isValid && validationResult.errorType) {
+        showErrorModal(validationResult.errorType);
+        return;
+      }
+
+      setFiles((prevFiles) => [...prevFiles, ...newFiles]);
+    },
+    [files, validationConfig, showErrorModal]
+  );
+
+  /**
+   * 특정 파일 제거 핸들러
+   */
+  const handleFileRemove = useCallback((fileIndex: number) => {
+    setFiles((prevFiles) =>
+      prevFiles.filter((_, index) => index !== fileIndex)
+    );
+  }, []);
+
+  /**
+   * 모든 파일 제거 핸들러
+   */
+  const handleFilesClear = useCallback(() => {
     setFiles([]);
   }, []);
 
-  /** 에러 모달 모음 */
-  const ErrorModals = () => (
-    <>
-      <Modal {...model_extensionModal} />
-      <Modal {...model_maxAmountModal} />
-      <Modal {...model_maxSizeModal} />
-    </>
-  );
-
   return {
     files,
-    setFilesData,
-    removeFileData,
-    clearFileData,
-    ErrorModals,
+    handleFileAdd,
+    handleFileRemove,
+    handleFilesClear,
+    FileErrorModals,
+    isErrorModalOpen,
   };
 };
 
-export default useFile;
+export default useFileManager;

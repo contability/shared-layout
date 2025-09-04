@@ -1,10 +1,15 @@
 import FileButton from "../../components/shared/fields/file/file-button";
 import { FaRegTrashAlt } from "react-icons/fa";
-import useFile from "../../lib/hooks/useFile";
+import useFileManager from "../../lib/hooks/useFile";
 
 const FileVersion01 = () => {
-  const { files, setFilesData, removeFileData, clearFileData, ErrorModals } =
-    useFile();
+  const {
+    files,
+    handleFileAdd,
+    handleFileRemove,
+    handleFilesClear,
+    FileErrorModals,
+  } = useFileManager();
   return (
     <>
       <fieldset className="flex-1 flex flex-col gap-[1.2rem]">
@@ -14,7 +19,7 @@ const FileVersion01 = () => {
             <div className="flex gap-4">
               <button
                 className="p-2 bg-gray-50 text-gray-500 rounded-lg hover:text-black"
-                onClick={clearFileData}
+                onClick={handleFilesClear}
               >
                 all clear file
               </button>
@@ -22,7 +27,7 @@ const FileVersion01 = () => {
                 className="p-2"
                 label="Upload"
                 id="file-button"
-                onChange={setFilesData}
+                onChange={handleFileAdd}
               />
             </div>
           </div>
@@ -42,7 +47,7 @@ const FileVersion01 = () => {
                 >
                   <button
                     className="text-gray-500 hover:text-black"
-                    onClick={() => removeFileData(fileIndex)}
+                    onClick={() => handleFileRemove(fileIndex)}
                   >
                     <FaRegTrashAlt size={16} />
                   </button>
@@ -55,8 +60,8 @@ const FileVersion01 = () => {
           )}
         </div>
       </fieldset>
-      {/* FIXME: ErrorModals들 사라질 때 motion exit 애니메이션 적용 안되는 문제 있음. 수정 필요 */}
-      <ErrorModals />
+      {/* FIXME: FileErrorModals들 사라질 때 motion exit 애니메이션 적용 안되는 문제 있음. 수정 필요 */}
+      <FileErrorModals />
     </>
   );
 };
