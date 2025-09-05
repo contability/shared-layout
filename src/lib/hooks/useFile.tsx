@@ -2,7 +2,7 @@
 
 import { ChangeEvent, useCallback, useMemo, useState } from "react";
 import { FileManagerOptions, FileManagerResult } from "../../types/File";
-import { useFileErrorModals } from "./useFileErrorModals";
+import { useFileErrorModal } from "./useFileErrorModal";
 import {
   validateFiles,
   ALLOWED_FILE_EXTENSIONS,
@@ -10,7 +10,7 @@ import {
 
 /**
  * 파일 관리 훅
- * 파일 업로드, 삭제, 유효성 검증 등을 관리한다
+ * 파일 상태 관리에만 집중
  */
 const useFileManager = (options?: FileManagerOptions): FileManagerResult => {
   const {
@@ -20,16 +20,6 @@ const useFileManager = (options?: FileManagerOptions): FileManagerResult => {
   } = options || {};
 
   const [files, setFiles] = useState<File[]>([]);
-
-  // 에러 모달 관리 훅
-  const {
-    showErrorModal,
-    FileErrorModals,
-    isModalOpen: isErrorModalOpen,
-  } = useFileErrorModals({
-    maxFileSizeMB,
-    maxFileCount,
-  });
 
   // 파일 유효성 검증 설정
   const validationConfig = useMemo(
@@ -41,6 +31,13 @@ const useFileManager = (options?: FileManagerOptions): FileManagerResult => {
     [maxFileSizeMB, maxFileCount, allowedExtensions]
   );
 
+  // 에러 모달 관리 (별도 관심사)
+  const { showErrorModal, FileErrorModal } = useFileErrorModal({
+    maxFileSizeMB,
+    maxFileCount,
+    allowedExtensions,
+  });
+
   /**
    * 파일 추가 핸들러
    */
@@ -49,10 +46,10 @@ const useFileManager = (options?: FileManagerOptions): FileManagerResult => {
       const newFiles: File[] = Array.from(event.target.files || []);
       if (newFiles.length === 0) return;
 
-      const validationResult = validateFiles(files, newFiles, validationConfig);
+      const errorType = validateFiles(files, newFiles, validationConfig);
 
-      if (!validationResult.isValid && validationResult.errorType) {
-        showErrorModal(validationResult.errorType);
+      if (errorType) {
+        showErrorModal(errorType);
         return;
       }
 
@@ -82,8 +79,7 @@ const useFileManager = (options?: FileManagerOptions): FileManagerResult => {
     handleFileAdd,
     handleFileRemove,
     handleFilesClear,
-    FileErrorModals,
-    isErrorModalOpen,
+    FileErrorModal,
   };
 };
 

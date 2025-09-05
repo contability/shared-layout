@@ -3,17 +3,18 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState, type PropsWithChildren } from "react";
 import { createPortal } from "react-dom";
-import ModalContainer from "./container";
-import { FocusTrap } from "focus-trap-react";
+import ModalOverlay from "./overlay";
 
-interface ModalProps {
+export interface ModalProps {
   isOpen: boolean;
-  closeModal: () => void;
+  className?: string;
+  onClose?: () => void;
 }
 
 const Modal = ({
   isOpen,
-  closeModal,
+  onClose,
+  className = "",
   children,
 }: PropsWithChildren<ModalProps>) => {
   const [portalElement, setPortalElement] = useState<Element | null>(null);
@@ -24,6 +25,7 @@ const Modal = ({
       setPortalElement(element);
     }
   }, []);
+
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "";
@@ -33,19 +35,23 @@ const Modal = ({
     return createPortal(
       <AnimatePresence>
         {isOpen && (
-          <ModalContainer closeModal={closeModal}>
+          <>
+            <ModalOverlay onClose={onClose} />
             <motion.div
-              className="block px-4"
+              className={`fixed top-1/2 left-1/2 z-[53] block w-auto px-4 ${className}`}
               initial={{
-                y: 20,
+                x: "-50%",
+                y: "calc(-50% + 20px)",
                 opacity: 0,
               }}
               animate={{
-                y: 0,
+                x: "-50%",
+                y: "-50%",
                 opacity: 1,
               }}
               exit={{
-                y: 20,
+                x: "-50%",
+                y: "calc(-50% + 20px)",
                 opacity: 0,
               }}
               transition={{
@@ -53,18 +59,9 @@ const Modal = ({
                 duration: 0.3,
               }}
             >
-              <FocusTrap
-                active={isOpen}
-                focusTrapOptions={{
-                  // 포커스 가능한 요소가 없어도 에러가 발생하지 않도록
-                  fallbackFocus: "#root-modal",
-                  clickOutsideDeactivates: true,
-                }}
-              >
-                {children}
-              </FocusTrap>
+              {children}
             </motion.div>
-          </ModalContainer>
+          </>
         )}
       </AnimatePresence>,
       portalElement,

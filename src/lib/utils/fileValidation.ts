@@ -24,11 +24,11 @@ export interface FileValidationConfig {
   allowedExtensions: readonly string[];
 }
 
-export interface FileValidationResult {
-  isValid: boolean;
-  errorType?: "duplicate" | "maxCount" | "maxSize" | "invalidExtension";
-  errorMessage?: string;
-}
+export type FileErrorType =
+  | "duplicate"
+  | "maxCount"
+  | "maxSize"
+  | "invalidExtension";
 
 /**
  * 파일 확장자 추출
@@ -83,20 +83,16 @@ export const validateFileCount = (
 };
 
 /**
- * 종합적인 파일 유효성 검사
+ * 종합적인 파일 유효성 검사 - 첫 번째 에러 타입만 반환
  */
 export const validateFiles = (
   existingFiles: File[],
   newFiles: File[],
   config: FileValidationConfig
-): FileValidationResult => {
+): FileErrorType | null => {
   // 중복 파일 검사
   if (hasDuplicateFiles(existingFiles, newFiles)) {
-    return {
-      isValid: false,
-      errorType: "duplicate",
-      errorMessage: "Duplicate files detected. Please select different files.",
-    };
+    return "duplicate";
   }
 
   // 파일 개수 검사
@@ -107,11 +103,7 @@ export const validateFiles = (
       config.maxFileCount
     )
   ) {
-    return {
-      isValid: false,
-      errorType: "maxCount",
-      errorMessage: `File registration cannot exceed ${config.maxFileCount} files.`,
-    };
+    return "maxCount";
   }
 
   // 파일 크기 검사
@@ -119,11 +111,7 @@ export const validateFiles = (
     (file) => !validateFileSize(file, config.maxFileSizeMB)
   );
   if (hasInvalidSize) {
-    return {
-      isValid: false,
-      errorType: "maxSize",
-      errorMessage: `Please register only files less than ${config.maxFileSizeMB}MB.`,
-    };
+    return "maxSize";
   }
 
   // 파일 확장자 검사
@@ -131,12 +119,8 @@ export const validateFiles = (
     (file) => !validateFileExtension(file, config.allowedExtensions)
   );
   if (hasInvalidExtension) {
-    return {
-      isValid: false,
-      errorType: "invalidExtension",
-      errorMessage: `This is not a file format that can be registered. Please check the extensions that can be registered. [${config.allowedExtensions.join(", ")}]`,
-    };
+    return "invalidExtension";
   }
 
-  return { isValid: true };
+  return null; // 모든 검사 통과
 };

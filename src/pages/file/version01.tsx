@@ -8,7 +8,7 @@ const FileVersion01 = () => {
     handleFileAdd,
     handleFileRemove,
     handleFilesClear,
-    FileErrorModals,
+    FileErrorModal,
   } = useFileManager();
   return (
     <>
@@ -60,8 +60,8 @@ const FileVersion01 = () => {
           )}
         </div>
       </fieldset>
-      {/* FIXME: FileErrorModals들 사라질 때 motion exit 애니메이션 적용 안되는 문제 있음. 수정 필요 */}
-      <FileErrorModals />
+      {/* FIXME: FileErrorModal 사라질 때 motion exit 애니메이션 적용 안되는 문제 있음. 수정 필요 */}
+      <FileErrorModal />
     </>
   );
 };

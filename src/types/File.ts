@@ -1,5 +1,4 @@
-import { ChangeEvent } from "react";
-import { AllowedFileExtension } from "../lib/utils/fileValidation";
+import { ChangeEvent, ReactNode } from "react";
 
 /**
  * 파일 관리 훅의 설정 옵션
@@ -26,47 +25,5 @@ export interface FileManagerResult {
   /** 모든 파일 제거 핸들러 */
   handleFilesClear: () => void;
   /** 파일 에러 모달 컴포넌트 */
-  FileErrorModals: () => JSX.Element;
-  /** 현재 에러 모달이 열려있는지 여부 */
-  isErrorModalOpen: boolean;
-}
-
-/**
- * 파일 업로드 이벤트 핸들러 타입
- */
-export type FileUploadHandler = (event: ChangeEvent<HTMLInputElement>) => void;
-
-/**
- * 파일 제거 핸들러 타입
- */
-export type FileRemoveHandler = (fileIndex: number) => void;
-
-/**
- * 파일 관련 액션 핸들러들
- */
-export interface FileActionHandlers {
-  onFileAdd: FileUploadHandler;
-  onFileRemove: FileRemoveHandler;
-  onFilesClear: () => void;
-}
-
-/**
- * 파일 메타데이터
- */
-export interface FileMetadata {
-  name: string;
-  size: number;
-  type: string;
-  extension: string | null;
-  lastModified: number;
-}
-
-/**
- * 파일 상태 정보
- */
-export interface FileState {
-  files: File[];
-  fileCount: number;
-  totalSize: number;
-  hasFiles: boolean;
+  FileErrorModal: () => ReactNode;
 }
