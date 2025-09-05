@@ -7,7 +7,7 @@ const ModalVersion01 = () => {
   return (
     <div>
       <button onClick={() => setIsModalOpen(true)}>open</button>
-      <Modal isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)}>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <AlertModal
           messages={["Modal Version01"]}
           onClose={() => setIsModalOpen(false)}
